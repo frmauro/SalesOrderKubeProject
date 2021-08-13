@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: salesapiusernode
+  name: salesapiusernode
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salesapiusernode
+    template:
+      metadata:
+        labels:
+          app: salesapiusernode
+      spec:
+        containers:
+        - image: salesapiusernode
+          name: salesapiusernode
+          ports:
+          - containerPort: 8088
+            name: salesapiusernode          
