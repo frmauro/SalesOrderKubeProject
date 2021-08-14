@@ -18,6 +18,7 @@ spec:
       containers:
       - image: salesapiusernode
         name: salesapiuser
+        imagePullPolicy: Never
         ports:
         - containerPort: 8088
           name: salesapiuser          
