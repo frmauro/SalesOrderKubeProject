@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: salesuserreact
+  name: salesuserreact
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salesuserreact
+  template:
+    metadata:
+      labels:
+        app: salesuserreact
+    spec:
+      containers:
+      - image: salesuserreact
+        name: salesuserreact
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+          name: salesuserreact            
