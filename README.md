@@ -10,3 +10,5 @@ kubectl delete svc salesapiuser -n salesorder
 kubectl delete deploy salesapiuser -n salesorder
 kubectl logs salesapiuser-769d9fd564-56pc6 -n salesorder
 
+kubectl exec productdb-787d69f988-5swkt  -n salesorder -it -- /bin/bash
+

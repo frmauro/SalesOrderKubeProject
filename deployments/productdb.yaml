@@ -22,7 +22,7 @@ spec:
         - containerPort: 1433
           name: sqlserver
         volumeMounts:
-        - mountPath: sqldata:/var/opt/mssql
+        - mountPath: /var/opt/mssql
           name: productdb-data
         env:
         - name: "ACCEPT_EULA"
