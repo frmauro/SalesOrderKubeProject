@@ -9,9 +9,7 @@ spec:
   type: NodePort    
   ports:
   - name: "salesapiusernode-service"
-    port: 3000
-    targetPort: 3000
-    protocol: TCP
+    port: 8088
     nodePort: 31000
   selector:
     app: salesapiuser  
