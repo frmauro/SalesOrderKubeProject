@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: productdb
+  name: productdb
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productdb
+  template:
+    metadata:
+      labels:
+        app: productdb
+    spec:
+      containers:
+      - image: mcr.microsoft.com/mssql/server   
+        name: sqlserver
+        ports:
+        - containerPort: 1433
+          name: sqlserver
+        volumeMounts:
+        - mountPath: sqldata:/var/opt/mssql
+          name: productdb-data
+        env:
+        - name: "ACCEPT_EULA"
+          value: "Y"
+        - name: "Mau123456"    
+      volumes:
+      - name: productdb-data
+        emptyDir: {}               
