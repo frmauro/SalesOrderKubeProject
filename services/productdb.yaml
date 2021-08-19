@@ -6,10 +6,8 @@ metadata:
   name: productdb
   namespace: salesorder
 spec:
-  type: ClusterIP
   ports:
-  - name: "productdb-service"    
+  - protocol: TCP
     port: 1433
     targetPort: 1433
-  selector:
-    app: productdb  
+  type: LoadBalancer
