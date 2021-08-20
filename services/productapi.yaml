@@ -9,7 +9,7 @@ spec:
   type: NodePort    
   ports:
   - name: "productapi-service"
-    port: 8087
+    port: 4999
     nodePort: 31003
   selector:
     app: productapi  

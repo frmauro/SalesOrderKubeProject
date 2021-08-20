@@ -20,5 +20,12 @@ spec:
         name: productapi
         imagePullPolicy: Never
         ports:
-        - containerPort: 8087
+        - containerPort: 4999
           name: productapi
+        env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: DEVELOPMENT
+            - name: SQLSERVER_CONNECTIONSTRING
+              value: "Server=productapi;Database=productApi;User=sa;Password=Mau123&&&;"
+
+  

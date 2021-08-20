@@ -20,7 +20,6 @@ spec:
         name: sqlserver
         ports:
         - containerPort: 1433
-          securityContext:
           name: sqlserver
         env:
         - name: ACCEPT_EULA
