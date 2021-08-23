@@ -26,6 +26,6 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: DEVELOPMENT
             - name: SQLSERVER_CONNECTIONSTRING
-              value: "Server=productapi;Database=productApi;User=sa;Password=Mau123&&&;"
+              value: "Server=productdb;Database=productApi;User=sa;Password=Mau123&&&;"
 
   

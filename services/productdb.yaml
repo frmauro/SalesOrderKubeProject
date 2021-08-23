@@ -6,6 +6,8 @@ metadata:
   name: productdb
   namespace: salesorder
 spec:
+  selector:
+    app: productdb
   ports:
   - protocol: TCP
     port: 1433
