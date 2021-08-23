@@ -20,5 +20,5 @@ spec:
         name: productfrontend
         imagePullPolicy: Never
         ports:
-        - containerPort: 8085
+        - containerPort: 80
           name: productfrontend            
