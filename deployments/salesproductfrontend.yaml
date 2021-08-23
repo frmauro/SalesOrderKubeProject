@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: productfrontend
+  name: productfrontend
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productfrontend
+  template:
+    metadata:
+      labels:
+        app: productfrontend
+    spec:
+      containers:
+      - image: salesproductfrontend
+        name: productfrontend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8085
+          name: productfrontend            
