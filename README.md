@@ -20,3 +20,9 @@ minikube dashboard
 kubectl apply -f persistent/pvclaim.yaml
 kubectl apply -f persistent/pvclaim.yaml -n salesorder
 kubectl describe pvc pvclaim
+
+## command for iterate with mysql  
+echo $MYSQL_ROOT_PASSWORD
+admin
+root@k8s-mysql:/# mysql --user=root --password=$MYSQL_ROOT_PASSWORD
+
