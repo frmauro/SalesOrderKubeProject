@@ -3,13 +3,13 @@ kind: Service
 metadata:
   labels:
     app: salesapiuser
-  name: apiuserhttp
+  name: apiusergrpc
   namespace: salesorder
 spec:
   type: NodePort    
   ports:
-  - name: "salesapiusernode-service"
-    port: 8088
-    nodePort: 31000
+  - name: "apiusergrpc-service"
+    port: 50051
+    nodePort: 31005
   selector:
     app: salesapiuser  

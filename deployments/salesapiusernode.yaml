@@ -21,4 +21,6 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 8088
-          name: salesapiuser          
+          name: http          
+        - containerPort: 50051
+          name: grpc            
