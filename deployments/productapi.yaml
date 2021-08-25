@@ -21,7 +21,9 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 4999
-          name: productapi
+          name: http
+        - containerPort: 9090
+          name: grpc
         env:
             - name: ASPNETCORE_ENVIRONMENT
               value: DEVELOPMENT
