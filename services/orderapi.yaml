@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: orderapi
+  name: orderapi
+  namespace: salesorder
+spec:
+  type: NodePort    
+  ports:
+  - name: "orderapi-service"
+    port: 8080
+    nodePort: 31007
+  selector:
+    app: orderapi  

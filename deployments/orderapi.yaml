@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: orderapi
+  name: orderapi
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orderapi
+  template:
+    metadata:
+      labels:
+        app: orderapi
+    spec:
+      containers:
+      - image: orderapi
+        name: orderapi
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+            - name: MYSQL_URL
+              value: orderdb
+            - name: MYSQL_PORT
+              value: "3306"  
+
+  
