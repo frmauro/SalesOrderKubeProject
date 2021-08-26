@@ -22,11 +22,26 @@ spec:
         - containerPort: 3306
           name: mysql
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_ROOT_PASSWORD 
+          valueFrom:                # Read environment variables from kubernetes secrets
+            secretKeyRef:
+              name: mysql-root-pass
+              key: password
+        - name: MYSQL_DATABASE
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: password
+              name: mysql-db-url
+              key: database
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-pass
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-pass
+              key: password        
         volumeMounts:
         - name: orderdb-data
           mountPath: /var/lib/mysql

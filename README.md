@@ -21,6 +21,10 @@ kubectl apply -f persistent/pvclaim.yaml
 kubectl apply -f persistent/pvclaim.yaml -n salesorder
 kubectl describe pvc pvclaim
 
+kubectl create secret generic mysql-root-pass --from-literal=password=admin -n salesorder
+kubectl create secret generic mysql-user-pass --from-literal=username=teste@localhost --from-literal=password=admin -n salesorder
+kubectl create secret generic mysql-db-url --from-literal=database=polls --from-literal=url='jdbc:mysql://orderdb:3306/orderapi' -n salesorder
+
 ## command for iterate with mysql  
 echo $MYSQL_ROOT_PASSWORD
 admin
