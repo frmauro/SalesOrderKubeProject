@@ -25,22 +25,22 @@ spec:
         - name: MYSQL_ROOT_PASSWORD 
           valueFrom:                # Read environment variables from kubernetes secrets
             secretKeyRef:
-              name: mysql-root-pass
-              key: password
+              name: mysql-login
+              key: rootPassword
         - name: MYSQL_DATABASE
           valueFrom:
             secretKeyRef:
-              name: mysql-db-url
-              key: database
+              name: mysql-login
+              key: database-name      
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
-              name: mysql-user-pass
+              name: mysql-login
               key: username
-        - name: MYSQL_PASSWORD
+        - name: MYSQL_PASSWORD      
           valueFrom:
             secretKeyRef:
-              name: mysql-user-pass
+              name: mysql-login
               key: password        
         volumeMounts:
         - name: orderdb-data

@@ -23,18 +23,18 @@ spec:
         - containerPort: 8080
           name: http
         env: # Environment variables supplied to the Pod
-        - name: SPRING_DATASOURCE_USERNAME # Name of the environment variable
-          valueFrom:          # Get the value of environment variable from kubernetes secrets
+        - name: MYSQL_DATABASE
+          valueFrom:
             secretKeyRef:
-              name: mysql-user-pass
+              name: mysql-login
+              key: database-name      
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-login
               key: username
-        - name: SPRING_DATASOURCE_PASSWORD
+        - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-user-pass
-              key: password
-        - name: SPRING_DATASOURCE_URL
-          valueFrom:
-            secretKeyRef:
-              name: mysql-db-url
-              key: url
+              name: mysql-login
+              key: password        
