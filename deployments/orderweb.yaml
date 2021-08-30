@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: orderweb
+  name: orderweb
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orderweb
+  template:
+    metadata:
+      labels:
+        app: orderweb
+    spec:
+      containers:
+      - image: salesorderfrontend
+        name: orderweb
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+          name: orderweb            
