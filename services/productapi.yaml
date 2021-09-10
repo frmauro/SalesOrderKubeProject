@@ -6,10 +6,10 @@ metadata:
   name: productapi
   namespace: salesorder
 spec:
-  type: NodePort    
   ports:
   - name: "productapi-service"
     port: 4999
-    nodePort: 31003
+    targetPort: 4999
+    protocol: TCP
   selector:
     app: productapi  
