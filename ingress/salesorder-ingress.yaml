@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: salesorder-ingress
+spec:
+  rules:
+  - host: salesorder.com
+    http:
+      paths:
+      - path: /product
+        pathType: Prefix
+        backend:
+          service:
+            name: productapi
+            port:
+              number: 4999
+      - path: /users
+        pathType: Prefix
+        backend:
+          service:
+            name: apiuserhttp
+            port:
+              number: 8088

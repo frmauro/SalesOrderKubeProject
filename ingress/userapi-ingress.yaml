@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: productapi-ingress
+  name: userapi-ingress
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   defaultBackend:
     service:
-      name: productapi
+      name: apiuserhttp
       port:
-        number: 4999
+        number: 8088  

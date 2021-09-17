@@ -6,10 +6,10 @@ metadata:
   name: apiuserhttp
   namespace: salesorder
 spec:
-  type: NodePort    
   ports:
   - name: "salesapiusernode-service"
     port: 8088
-    nodePort: 31000
+    targetPort: 8088
+    protocol: TCP
   selector:
     app: salesapiuser  
