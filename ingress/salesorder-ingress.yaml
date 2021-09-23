@@ -21,3 +21,17 @@ spec:
             name: apiuserhttp
             port:
               number: 8088
+      - path: /user
+        pathType: Prefix
+        backend:
+          service:
+            name: apiuserhttp
+            port:
+              number: 8088              
+      - path: /create
+        pathType: Prefix
+        backend:
+          service:
+            name: apiuserhttp
+            port:
+              number: 8088                            
