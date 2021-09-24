@@ -32,6 +32,17 @@ kubectl create secret generic mysql-db-url --from-literal=database=polls --from-
 
 kubectl get secrets -n salesorder
 
+
+
+kubectl apply -f services/salesproductfrontend.yaml -n salesorder
+kubectl apply -f deployments/salesproductfrontend.yaml -n salesorder
+kubectl delete deploy productfrontend  -n salesorder
+kubectl delete svc productfrontend  -n salesorder
+kubectl create -f ingress/salesorder-ingress.yaml -n salesorder
+kubectl delete ingress salesorder-ingress -n salesorder
+
+
+
 ## By default, secrets have to be base64 encoded first. So, let’s generate those base64 strings first:
 echo -n "dbuser" | base64
 echo -n "admin" | base64
