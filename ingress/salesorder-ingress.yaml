@@ -35,3 +35,10 @@ spec:
             name: apiuserhttp
             port:
               number: 8088                            
+      - path: /orders
+        pathType: Prefix
+        backend:
+          service:
+            name: orderapi
+            port:
+              number: 8080                                          

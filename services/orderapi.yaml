@@ -10,6 +10,7 @@ spec:
   ports:
   - name: "orderapi-service"
     port: 8080
-    nodePort: 31007
+    targetPort: 8080
+    protocol: TCP
   selector:
     app: orderapi  
