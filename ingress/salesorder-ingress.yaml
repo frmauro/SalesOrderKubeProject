@@ -42,3 +42,10 @@ spec:
             name: orderapi
             port:
               number: 8080                                          
+      - path: /products
+        pathType: Prefix
+        backend:
+          service:
+            name: orderapi
+            port:
+              number: 8080                                                        
