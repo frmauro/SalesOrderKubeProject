@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webproductblazor
+  name: webproductblazor
+  namespace: salesorder
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: webproductblazor
+  template:
+    metadata:
+      labels:
+        app: webproductblazor
+    spec:
+      containers:
+      - image: webproduct
+        name: webproductblazor
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+          name: webproductblazor            
