@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: apigetway
+  name: apigetway
+  namespace: salesorder
+spec:
+  ports:
+  - name: "apigetway-service"    
+    port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: apigetway  

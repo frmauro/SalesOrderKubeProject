@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: apigetway
+  name: apigetway
+  namespace: salesorder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apigetway
+  template:
+    metadata:
+      labels:
+        app: apigetway
+    spec:
+      containers:
+      - image: apigetway
+        name: apigetway
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000            

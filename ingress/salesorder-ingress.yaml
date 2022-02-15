@@ -7,13 +7,13 @@ spec:
   - host: salesorder.com
     http:
       paths:
-      - path: /product
+      - path: /tst
         pathType: Prefix
         backend:
           service:
-            name: productapi
+            name: apigetway
             port:
-              number: 4999
+              number: 5000
       - path: /users
         pathType: Prefix
         backend:
