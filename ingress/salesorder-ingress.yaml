@@ -37,6 +37,13 @@ spec:
             name: apigetway
             port:
               number: 5000
+      - path: /CreateUser
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
       # - path: /users
       #   pathType: Prefix
       #   backend:
@@ -51,13 +58,13 @@ spec:
             name: apiuserhttp
             port:
               number: 8088              
-      - path: /create
-        pathType: Prefix
-        backend:
-          service:
-            name: apiuserhttp
-            port:
-              number: 8088                            
+      # - path: /create
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: apiuserhttp
+      #       port:
+      #         number: 8088                            
       - path: /orders
         pathType: Prefix
         backend:
