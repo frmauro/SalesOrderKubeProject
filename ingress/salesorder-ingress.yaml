@@ -1,6 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
   name: salesorder-ingress
 spec:
   rules:
@@ -18,9 +20,30 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: apiuserhttp
+            name: apigetway
             port:
-              number: 8088
+              number: 5000
+      - path: /teste/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000
+      - path: /GetUserById/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000
+      # - path: /users
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: apiuserhttp
+      #       port:
+      #         number: 8088
       - path: /user
         pathType: Prefix
         backend:
