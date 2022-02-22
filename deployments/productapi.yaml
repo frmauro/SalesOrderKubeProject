@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 4999
           name: http
-        - containerPort: 9090
+        - containerPort: 9091
           name: grpc
         env:
             - name: ASPNETCORE_ENVIRONMENT

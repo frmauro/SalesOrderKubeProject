@@ -50,7 +50,14 @@ spec:
           service:
             name: apigetway
             port:
-              number: 5000                            
+              number: 5000
+      - path: /getAllProduct
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                                                                                                  
       # - path: /users
       #   pathType: Prefix
       #   backend:
@@ -79,10 +86,10 @@ spec:
             name: orderapi
             port:
               number: 8080                                          
-      - path: /products
-        pathType: Prefix
-        backend:
-          service:
-            name: orderapi
-            port:
-              number: 8080                                                        
+      # - path: /products
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: orderapi
+      #       port:
+      #         number: 8080                                                        

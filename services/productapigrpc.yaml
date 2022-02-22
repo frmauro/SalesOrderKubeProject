@@ -9,7 +9,7 @@ spec:
   type: NodePort    
   ports:
   - name: "productapigrpc-service"
-    port: 9090
+    port: 9091
     nodePort: 31006
   selector:
     app: productapi  
