@@ -79,6 +79,20 @@ spec:
             name: apigetway
             port:
               number: 5000                            
+      - path: /UpdateAmount
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
+      - path: /FindUserByEmailAndPassword
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
       # - path: /users
       #   pathType: Prefix
       #   backend:
