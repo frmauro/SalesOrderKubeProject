@@ -57,7 +57,28 @@ spec:
           service:
             name: apigetway
             port:
-              number: 5000                                                                                                  
+              number: 5000
+      - path: /GetProductById/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000
+      - path: /CreateProduct
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
+      - path: /UpdateProduct
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
       # - path: /users
       #   pathType: Prefix
       #   backend:
@@ -65,13 +86,13 @@ spec:
       #       name: apiuserhttp
       #       port:
       #         number: 8088
-      - path: /user
-        pathType: Prefix
-        backend:
-          service:
-            name: apiuserhttp
-            port:
-              number: 8088              
+      # - path: /user
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: apiuserhttp
+      #       port:
+      #         number: 8088              
       # - path: /create
       #   pathType: Prefix
       #   backend:
