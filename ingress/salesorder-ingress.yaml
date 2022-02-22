@@ -44,6 +44,13 @@ spec:
             name: apigetway
             port:
               number: 5000                            
+      - path: /UpdateUser
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000                            
       # - path: /users
       #   pathType: Prefix
       #   backend:
