@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: orderapigrpc
+  name: orderapigrpc
+  namespace: salesorder
+spec:
+  type: NodePort
+  ports:
+  - name: "orderapigrpc-service"
+    port: 9090
+    nodePort: 31009
+  selector:
+    app: orderapigrpc   
