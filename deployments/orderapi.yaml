@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 8080
           name: http
-        - containerPort: 9090
+        - containerPort: 9092
           name: grpc
         env: # Environment variables supplied to the Pod
         - name: MYSQL_DATABASE

@@ -9,7 +9,7 @@ spec:
   type: NodePort
   ports:
   - name: "orderapigrpc-service"
-    port: 9090
+    port: 9092
     nodePort: 31009
   selector:
     app: orderapigrpc   
