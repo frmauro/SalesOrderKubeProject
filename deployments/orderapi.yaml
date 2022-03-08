@@ -16,7 +16,7 @@ spec:
         app: orderapi
     spec:
       containers:
-      - image: orderapi2
+      - image: orderapi4
         name: orderapi
         imagePullPolicy: Never
         ports:
