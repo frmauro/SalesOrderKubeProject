@@ -16,7 +16,7 @@ spec:
         app: orderweb
     spec:
       containers:
-      - image: salesorderfrontend
+      - image: salesorderfrontend2
         name: orderweb
         imagePullPolicy: Never
         ports:
