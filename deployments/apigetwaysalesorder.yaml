@@ -16,7 +16,7 @@ spec:
         app: apigetway
     spec:
       containers:
-      - image: apigetway2
+      - image: apigetway3
         name: apigetway
         imagePullPolicy: Never
         ports:

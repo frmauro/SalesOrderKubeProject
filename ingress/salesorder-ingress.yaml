@@ -107,6 +107,13 @@ spec:
             name: apigetway
             port:
               number: 5000
+      - path: /getOrderByUserId/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: apigetway
+            port:
+              number: 5000
       - path: /CreateOrder
         pathType: Prefix
         backend:
