@@ -53,3 +53,56 @@ echo $MYSQL_ROOT_PASSWORD
 admin
 root@k8s-mysql:/# mysql --user=root --password=$MYSQL_ROOT_PASSWORD
 
+
+
+## content reverse-proxy.conf file of NGINX (Ubunto Linux) in PATH: /etc/nginx/sites-availables
+## the routes below are for the minikube ingress local cluster in Linux Ubunto
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        access_log /var/log/nginx/reverse-access.log;
+        error_log /var/log/nginx/reverse-error.log;
+
+        location /getAllProduct {
+                  proxy_pass http://salesorder.com/getAllProduct;
+        }
+        location /CreateProduct {
+                  proxy_pass http://salesorder.com/CreateProduct;
+        }
+        location /UpdateProduct {
+                  proxy_pass http://salesorder.com/UpdateProduct;
+        }
+        location /users {
+                  proxy_pass http://salesorder.com/users;
+        }
+        location /UpdateUser {
+                  proxy_pass http://salesorder.com/UpdateUser;
+        }
+        location /CreateUser {
+                  proxy_pass http://salesorder.com/CreateUser;
+        }
+        location /GetAllOrders {
+                  proxy_pass http://salesorder.com/GetAllOrders;
+        }
+        location /FindUserByEmailAndPassword {
+                  proxy_pass http://salesorder.com/FindUserByEmailAndPassword;
+        }
+        location /getOrderByUserId {
+                  proxy_pass http://salesorder.com/getOrderByUserId;
+        }
+        location /CreateOrder {
+                  proxy_pass http://salesorder.com/CreateOrder;
+        }
+        location /UpdateOrder {
+                  proxy_pass http://salesorder.com/UpdateOrder;
+        }
+        location /UpdateAmount {
+                  proxy_pass http://salesorder.com/UpdateAmount;
+        }
+
+
+}
+
+
